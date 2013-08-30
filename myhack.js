@@ -67,6 +67,7 @@ function drawGraph(data) {
       .datum(data)
       .attr("class", "line")
       .attr("d", line)
+      .enter()
       .transition()
       .ease("linear")
       .duration(150)
