@@ -35,7 +35,7 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.price); });
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#visualisationGoesInHere").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -67,7 +67,6 @@ function drawGraph(data) {
       .datum(data)
       .attr("class", "line")
       .attr("d", line)
-      .enter()
       .transition()
       .ease("linear")
       .duration(150)
