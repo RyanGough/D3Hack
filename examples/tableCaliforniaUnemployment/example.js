@@ -5,14 +5,6 @@ function makeTable(tableData, containerId) {
     headers.push(key);
   }
 
-  var rows = [];
-  for(var index = 0; index < tableData.length; index++) {
-    var newRow = headers.map(function(key){
-      return tableData[index][key];
-    });
-    rows.push(newRow);
-  }
-
   // create table
   d3.select(containerId)
     .append("table")
@@ -32,6 +24,15 @@ function makeTable(tableData, containerId) {
     .append("th")
     .text(function(d){return d;});
 
+  // make value rows  
+  var rows = [];
+  for(var index = 0; index < tableData.length; index++) {
+    var newRow = headers.map(function(key){
+      return tableData[index][key];
+    });
+    rows.push(newRow);
+  }
+
   // insert value rows
   d3.select("#tableBody")
     .selectAll(".dataRow")
@@ -45,22 +46,9 @@ function makeTable(tableData, containerId) {
     .selectAll("td")
     .data(function(d) { return d; })
     .enter().append("td")
-    .text(function(d) { return d; });
-
-  // add click listener to the headers for sorting
-  var toggle = false;
-  d3.selectAll("th").on("click", function(d,i){
-    d3.selectAll(".dataRow").sort(function(a,b){
-      if (toggle) {
-        console.log("sort descending");
-        return d3.descending(a[i], b[i]);
-      } else {
-        console.log("sort ascending");
-        return d3.ascending(a[i], b[i]);
-      }
-    });
-    toggle = !toggle;
-  });
+    .html(function(d) { return d; });
 }
 
-makeTable(dataset.data, "#visualisationGoesInHere");
+makeTable(californiaUnemploymentData, "#visualisationGoesInHere");
+
+

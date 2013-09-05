@@ -1,6 +1,6 @@
 var pointsToReturn = 1;
 
-var fullDataSet = dataset.data.map(function(x){
+var fullDataSet = crudeOilData.map(function(x){
   return { date: d3.time.format("%x").parse(x.date), price: x.price, adjustedPrice: x.adjustedPrice};
 });
 
