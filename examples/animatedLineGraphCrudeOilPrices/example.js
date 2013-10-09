@@ -1,17 +1,6 @@
-var pointsToReturn = 1;
-
 var fullDataSet = crudeOilData.map(function(x){
   return { date: d3.time.format("%x").parse(x.date), price: x.price, adjustedPrice: x.adjustedPrice};
 });
-
-function getDataSlice() {
-  var slicedArray = fullDataSet.slice(0,pointsToReturn);
-  pointsToReturn++;
-  if (pointsToReturn > 148) {
-    pointsToReturn = 1;
-  }
-  return slicedArray;
-}
 
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
@@ -60,18 +49,28 @@ svg.append("g")
   .text("Price ($)");
 
 function drawGraph(data) {
-  
-  svg.selectAll("path").data(data).exit().remove()
-  
   svg.append("path")
-      .datum(data)
-      .attr("class", "line")
-      .attr("d", line)
-      .transition()
-      .ease("linear")
-      .duration(150)
+    .datum(data)
+    .attr("class", "line")
+    .attr("d", line)
+}
+
+function clearGraph() {
+  svg.selectAll("path").data([]).exit().remove()
+}
+
+indexPoint = 0
+function getDataSlice() {
+  var slicedArray = fullDataSet.slice(indexPoint,indexPoint+2);
+  indexPoint+=1
+  if (indexPoint > 147) {
+    clearGraph();
+    indexPoint = 0;
+  }
+  return slicedArray;
 }
 
 setInterval(function() {
    drawGraph(getDataSlice())
- }, 150);
+ }, 50);
+
