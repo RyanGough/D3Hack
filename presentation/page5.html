@@ -1,0 +1,69 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>D3 Presentation</title>
+	<script src="../lib/scripts/d3/d3.v3.js"></script>
+</head>
+<body> 
+	<div id="pageContent">
+		<span><a href="./page4.html">Back</a><a href="./page6.html">Next</a></span>
+		<p>In which we introduce axes</p>
+	</div>
+	<div id="visualisation"></div>
+	<style>
+		.axis path{
+			fill: none;
+			stroke: steelblue;
+			stroke-width: 1px;
+		}
+	</style>
+	<script>
+		var data = [
+			{name: "one", height: 34, weight: 870, colour: "red"},
+			{name: "two", height: 12, weight: 650, colour: "green"},
+			{name: "three", height: 25, weight: 330, colour: "blue"},
+		];
+
+		var xScale = d3.scale.linear()
+						.domain([200,1000])
+						.range([25,375]);
+
+		var yScale = d3.scale.linear()
+						.domain([0, d3.max(data, function(x){return x.height})])
+						.range([175,25]);
+
+		var xAxis = d3.svg.axis()
+						.scale(xScale)
+						.orient("bottom")
+
+		var yAxis = d3.svg.axis()
+						.orient("left")
+						.scale(yScale);
+
+		var svg = d3.select("#visualisation")
+			.append("svg")
+			.attr("width", 400)
+			.attr("height", 210);
+		
+		svg.append("g")
+			.attr("transform", "translate(0,175)")
+			.attr("class", "axis")
+			.call(xAxis)
+
+		svg.append("g")
+			.attr("transform", "translate(25,0)")
+			.attr("class", "axis")
+			.call(yAxis)
+
+		svg.selectAll("circle")
+			.data(data)
+			.enter()
+			.append("circle")
+			.attr("r", 10)
+			.attr("cx", function(x){return xScale(x.weight)})
+			.attr("cy", function(x){return yScale(x.height)})
+			.style("fill", function(x){return x.colour})
+	
+	</script>
+</body>
+</html>

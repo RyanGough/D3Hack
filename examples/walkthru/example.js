@@ -39,24 +39,30 @@ svg.append("g")
 	.call(xAxis)
 
 svg.append("g")
-	.attr("transform", "translate(25,0)")
+	.attr("transform", "translate(275,0)")
 	.attr("class", "axis")
-	.call(yAxis)
+	.style("line", "1px")
+	.call(xAxis)
 
 function draw(data){
-	svg.selectAll("circle")
-	.data(data, function(x){return x.team})
+	var bind = svg.selectAll("circle")
+	.data(data, function(x){return x.team});
+
+	bind
 	.enter()
 	.append("circle")
 	.style("fill", function(x){return x.colour})
 	.attr("r", 10)
 
-	svg.selectAll("circle")
-	.data(data, function(x){return x.team})
+	bind
 	.transition()
 	.duration(1000)	
 	.attr("cx", function(x){return xScale(x.price)})
 	.attr("cy", function(x){return yScale(x.position)})
+
+	bind
+	.exit()
+	.remove()
 }
 
 setInterval(function(){

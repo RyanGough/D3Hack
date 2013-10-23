@@ -42,19 +42,24 @@ svg.append("g")
   .call(yAxis)
 
 function draw(data){
-  svg.selectAll("circle")
-  .data(data, function(x){return x.team})
+  var bind = svg.selectAll("circle")
+  .data(data, function(x){return x.team});
+
+  bind
   .enter()
   .append("circle")
   .style("fill", function(x){return x.colour})
   .attr("r", 10)
 
-  svg.selectAll("circle")
-  .data(data, function(x){return x.team})
+  bind
   .transition()
   .duration(1000) 
   .attr("cx", function(x){return xScale(x.price)})
   .attr("cy", function(x){return yScale(x.position)})
+
+  bind
+  .exit()
+  .remove()
 }
 
 setInterval(function(){
