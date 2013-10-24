@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>D3 Presentation</title>
+	<script src="../lib/scripts/d3/d3.v3.js"></script>
+</head>
+<body> 
+	<div id="pageContent">
+		<span><a href="./page1.html">Back</a><a href="./page3.html">Next</a></span>
+		<p>In which we create a join with our dataset and append circle elements to the svg</p>
+	</div>
+	<div id="visualisation"></div>
+	<script>
+		var data = [
+			{name: "one", height: 34, weight: 870, colour: "red"},
+			{name: "two", height: 12, weight: 650, colour: "green"},
+			{name: "three", height: 25, weight: 330, colour: "blue"},
+		];
+
+		var svg = d3.select("#visualisation")
+			.append("svg")
+			.attr("width", 400)
+			.attr("height", 200);
+
+		svg.selectAll("circle")
+			.data(data)
+			.enter()
+			.append("circle")
+			.attr("r", 10)
+			.attr("cx", 100)
+			.attr("cy", 100)
+
+	</script>
+</body>
+</html>
