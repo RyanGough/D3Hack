@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>D3 Presentation</title>
 	<script src="../lib/scripts/d3/d3.v3.js"></script>
 	<link rel="stylesheet" href="../lib/styles/bootstrap.min.css" />
+	<link rel="stylesheet" href="d3pres.css" />
 </head>
 <body> 
 	<div id="pageContent">
@@ -11,23 +13,25 @@
 			<li class="disabled"><a href="#">Previous</a></li>
 			<li><a href="./page2.html">Next</a></li>
 		</ul>
-		<h4 class="text-center">In which we use a simple select and append to add an svg element to the page</h4>
+		<h4 class="text-center">Simple Select and Append</h4>
+		<button class="btn btn-default" id="tryIt" onclick="play()">Try it</button>
 	</div>
-	<div class="container">
-			<div id="visualisation"></div>
-	</div>
+	<div id="visualisation"></div>
 	<pre>
 		var svg = d3.select("#visualisation")
 			.append("svg")
 			.attr("width", 400)
-			.attr("height", 200);				
+			.attr("height", 200);		
 	</pre>
 	<script>
-		var svg = d3.select("#visualisation")
-			.append("svg")
-			.attr("width", 400)
-			.attr("height", 200);
-	
+		function play(){
+			var svg = d3.select("#visualisation")
+				.append("svg")
+				.attr("width", 400)
+				.attr("height", 200)
+
+			document.getElementById("tryIt").onclick = null;
+		}
 	</script>
 </body>
 </html>
