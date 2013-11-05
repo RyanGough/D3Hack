@@ -24,7 +24,7 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.price); });
 
-var svg = d3.select("#visualisationGoesInHere").append("svg")
+var svg = d3.select("#visualisation").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -48,29 +48,8 @@ svg.append("g")
   .style("text-anchor", "end")
   .text("Price ($)");
 
-function drawGraph(data) {
-  svg.append("path")
-    .datum(data)
-    .attr("class", "line")
-    .attr("d", line)
-}
-
-function clearGraph() {
-  svg.selectAll("path").data([]).exit().remove()
-}
-
-indexPoint = 0
-function getDataSlice() {
-  var slicedArray = fullDataSet.slice(indexPoint,indexPoint+2);
-  indexPoint+=1
-  if (indexPoint > 147) {
-    clearGraph();
-    indexPoint = 0;
-  }
-  return slicedArray;
-}
-
-setInterval(function() {
-   drawGraph(getDataSlice())
- }, 50);
+svg.append("path")
+  .datum(fullDataSet)
+  .attr("class", "line")
+  .attr("d", line);
 
