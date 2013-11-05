@@ -1,0 +1,15 @@
+var booze = [
+	{year: 1995, total:	10558042, beer:	8179623		, brandy:	50115	, gin:	79240,	liqeurs:	115925,	misc:	328135,	port:	16924,	redwine:	603056,		rose:	138750,	sherry:	66581,	sparklywine:	111356,	vodka:	434592,	whiskey:	117000,	whitewine:	316745},
+	{year: 1996, total:	11430776, beer:	8945499		, brandy:	56179	, gin:	73630,	liqeurs:	120385,	misc:	333806,	port:	18440,	redwine:	674421,		rose:	147648,	sherry:	71914,	sparklywine:	120011,	vodka:	404074,	whiskey:	118118,	whitewine:	346652},
+	{year: 1997, total:	12464716, beer:	9826092		, brandy:	60827	, gin:	73856,	liqeurs:	109007,	misc:	449800,	port:	19133,	redwine:	730238,		rose:	139616,	sherry:	61000,	sparklywine:	124296,	vodka:	392231,	whiskey:	115390,	whitewine:	363230},
+	{year: 1998, total:	13914668, beer:	10964704	, brandy:	73821	, gin:	75191,	liqeurs:	127151,	misc:	448133,	port:	21278,	redwine:	910473,		rose:	139701,	sherry:	59367,	sparklywine:	142075,	vodka:	423410,	whiskey:	125337,	whitewine:	404027},
+	{year: 1999, total:	15438893, beer:	12206081	, brandy:	72519	, gin:	83053,	liqeurs:	140096,	misc:	492320,	port:	22803,	redwine:	1051789, 	rose:	138707,	sherry:	58796,	sparklywine:	193245,	vodka:	399647,	whiskey:	124251,	whitewine:	455585},
+	{year: 2000, total:	16544117, beer:	13048262	, brandy:	76457	, gin:	87490,	liqeurs:	140103,	misc:	555569,	port:	23824,	redwine:	1215602, 	rose:	133478,	sherry:	56211,	sparklywine:	160540,	vodka:	400931,	whiskey:	123992,	whitewine:	521657},
+	{year: 2001, total:	17472486, beer:	13684703	, brandy:	75484	, gin:	91540,	liqeurs:	156325,	misc:	585779,	port:	26688,	redwine:	1407519,	rose:	133946,	sherry:	51766,	sparklywine:	149490,	vodka:	398311,	whiskey:	122311,	whitewine:	588626},
+	{year: 2002, total:	18633802, beer:	14565654	, brandy:	77817	, gin:	93441,	liqeurs:	146010,	misc:	678615,	port:	25848,	redwine:	1606520,	rose:	120259,	sherry:	49538,	sparklywine:	142691,	vodka:	378806,	whiskey:	115642,	whitewine:	632963},
+	{year: 2003, total:	19236009, beer:	14995494	, brandy:	73767	, gin:	82497,	liqeurs:	132324,	misc:	701128,	port:	24361,	redwine:	1770031,	rose:	120556,	sherry:	46254,	sparklywine:	141807,	vodka:	331323,	whiskey:	105956,	whitewine:	710510},
+	{year: 2004, total:	20445721, beer:	15987342	, brandy:	70835	, gin:	80309,	liqeurs:	125639,	misc:	682284,	port:	24215,	redwine:	1935020,	rose:	114879,	sherry:	41808,	sparklywine:	147054,	vodka:	316776,	whiskey:	104673,	whitewine:	814887},
+	{year: 2005, total:	21836663, beer:	17044420	, brandy:	70196	, gin:	84486,	liqeurs:	128838,	misc:	745891,	port:	23470,	redwine:	2067528,	rose:	121469,	sherry:	38221,	sparklywine:	157461,	vodka:	313851,	whiskey:	106288,	whitewine:	934545},
+	{year: 2006, total:	23176263, beer:	18160292	, brandy:	70376	, gin:	84495,	liqeurs:	113665,	misc:	774305,	port:	25001,	redwine:	2114027, 	rose:	102612,	sherry:	34818,	sparklywine:	167091,	vodka:	347493,	whiskey:	108773,	whitewine:	1073315},
+	{year: 2007, total:	24818470, beer:	19443965	, brandy:	73785	, gin:	89722,	liqeurs:	113812,	misc:	796131,	port:	24572,	redwine:	2195248,	rose:	100052,	sherry:	33289,	sparklywine:	177810,	vodka:	399954,	whiskey:	113866,	whitewine:	1256263}
+]

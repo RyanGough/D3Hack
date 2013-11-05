@@ -49,6 +49,6 @@ function makeTable(tableData, containerId) {
     .html(function(d) { return d; });
 }
 
-makeTable(californiaUnemploymentData, "#visualisation");
+makeTable(booze, "#visualisation");
 
 
