@@ -49,6 +49,6 @@ function makeTable(tableData, containerId) {
     .html(function(d) { return d; });
 }
 
-makeTable(booze, "#visualisation");
+makeTable(internets, "#visualisation");
 
 
